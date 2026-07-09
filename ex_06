@@ -1,0 +1,6 @@
+/* Find the number of orders of every year */
+
+SELECT 
+COUNT(*)
+  FROM Sales
+ WHERE EXTRACT(year FROM Orderdate) = 2024
