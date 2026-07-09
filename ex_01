@@ -1,0 +1,28 @@
+/* Write a query that groups all orders by their quarter, hour, week, month, year*/
+
+SELECT 
+    OrderID,
+    CustomerID,
+    OrderDate,
+    TotalAmount,
+ DATEPART(quarter, OrderDate) AS Quarter_dp
+ DATEPART(hour, OrderDate) AS Day_dp,
+ DATEPART(week, OrderDate) AS Week_dp,
+ DATEPART(month, OrderDate) AS Order_dp,
+ DATEPART(year, OrderDate) AS Year_dp
+FROM 
+    Orders;
+
+/*Use DATETRUNC to group exactly by hour*/
+
+SELECT 
+    DATETRUNC('hour', OrderDate) AS order_dt,
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(revenue) AS total_revenue
+FROM 
+     Orders
+GROUP BY 
+    1
+ORDER BY 
+    order_dt;
+
