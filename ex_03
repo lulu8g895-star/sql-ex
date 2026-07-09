@@ -1,0 +1,9 @@
+/*Convert the date to a string format, forcing the day component to 01*/
+
+--Truncate date first using DATETRUNC
+SELECT 
+    OrderID,
+    OrderDate,
+CAST (DATETRUNC (month , OrderDate) AS DATE) StartOfMonth
+FROM orders 
+
