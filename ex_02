@@ -1,0 +1,13 @@
+SELECT 
+  DATETRUNC ( year, OrderDate) Cretion
+COUNT *
+FROM Sales
+GROUP BY  DATETRUNC ( year, OrderDate)
+
+
+SELECT 
+  DATETRUNC ( week, OrderDate) Cretion
+COUNT *
+FROM Sales
+GROUP BY  DATETRUNC ( week, OrderDate)
+
