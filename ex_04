@@ -1,0 +1,7 @@
+/* count the number of orders placed each year */
+
+SELECT
+ YEAR (OrderDate),
+COUT(*) NumberOfOrders
+FROM SalesOrders
+GROUP BY  YEAR (OrderDate)
