@@ -1,0 +1,8 @@
+-- Find average scores of customers--
+
+SELECT
+ CustomerID,
+ Score,
+ AVG (Score), OVER () AVG_Scores,
+ AVG (COALESCE (Score, 0)) OVER() AVG_Scores_02
+FROM Sales. Customers 
