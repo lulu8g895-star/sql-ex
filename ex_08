@@ -1,0 +1,5 @@
+--Show all orders that were placed during that month  of January
+
+SELECT *
+FROM Sales.Orders 
+WHERE MONTH (OrdereDate) = 1
