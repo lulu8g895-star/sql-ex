@@ -1,0 +1,12 @@
+/* Display the full name of customers in a singel field, by marging their firdt and last names. 
+Add 10 bonus points to each customer's score */
+
+SELECT 
+ CustomerID,
+ FirstName,
+ LastName,
+ LastName + ' ' +  COALESCE (LastName, 'n/a') AS FullName,
+ Score,
+ COALESCE (Score , 0)  + 10 AS ScoreWithBonus
+FROM Sales.Customers
+
