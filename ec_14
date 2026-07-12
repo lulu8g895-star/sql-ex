@@ -1,0 +1,6 @@
+/* Show the list of customers who have scores */
+
+SELECT
+*
+FROM sales.customers
+WHERE score IS NOT NULL
