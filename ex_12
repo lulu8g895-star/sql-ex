@@ -1,0 +1,7 @@
+/* Find the sales price for ecah order by dividing the sales by quantity*/
+
+SELECT
+ order-id,
+ sales,
+sales/NULLIF (quantity , 0) AS price
+FROM sales.orders
