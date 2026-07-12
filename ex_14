@@ -1,0 +1,7 @@
+/* list all details for customers who have not placed any orders*/
+SELECT
+c.*,
+FROM sales.customers c
+LEFT JOIN sales.customers o
+ON c.customer_id = o.customer_id
+WHERE o.customer_id IS NULL
