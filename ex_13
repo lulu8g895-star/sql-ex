@@ -1,0 +1,6 @@
+/* identify the customers who have no scores */
+
+SELECT 
+*
+FROM sales.customers
+WHERE score IS NULL
