@@ -9,3 +9,5 @@ AVG(sales) AS avg_sales,
 MAX(sale) As higherst_sales,
 MIN (sale) As lowest_sales
 FROM orders
+
+GROUp BY customer_id
