@@ -1,0 +1,4 @@
+--Find total number of customers
+SELECT
+COUNT(*) AS total_nr_orders
+FROM orders
