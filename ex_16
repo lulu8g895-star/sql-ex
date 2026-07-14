@@ -1,0 +1,11 @@
+-- find the total sales of all orders 
+-- find the average sales of all orders
+-- find the highest score among orders
+-- find the lowest sales of all orders
+SELECT
+COUNT(*) AS total_nr_orders,
+SUM(sales) AS total_sales
+AVG(sales) AS avg_sales,
+MAX(sale) As higherst_sales,
+MIN (sale) As lowest_sales
+FROM orders
