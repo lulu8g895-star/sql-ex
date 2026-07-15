@@ -1,0 +1,22 @@
+-- Fint the total sales across all orfers
+--USE salesDB
+SELET
+SUM (sales) total_sales
+FROM sales.orders
+
+--Find the total sales for each products
+SELET
+ product_ID
+ SUM (sales) total_sales
+FROM sales.orders
+GROUP BY product_ID
+
+--Find the total sales for each product
+--Additionally provide details such order Id, order date (usin Window fuction)
+SELET
+order_ID,
+order_date,
+prduct_ID,
+ SUM (sales) OVER (PARTITION BY product_ID) total_sales_by_products
+ FROM sales.orders
+
