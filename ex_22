@@ -1,0 +1,9 @@
+-- Rank each order based on their from highest to lowest
+-- Additionally provide details such order id, order date
+
+SELECT
+  order_id,
+  order_date,
+  sales,
+  RANK () OVER (ORDER BY sales DESC) rank_sales
+FROM sales.orders
