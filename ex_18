@@ -1,0 +1,8 @@
+-- Find the total sales across all orders
+-- additionally provide details such order id and order date
+
+SELECT
+ order_id,
+ order_date
+SUM(sales) OVER () total_sales
+FROM sales.orders
