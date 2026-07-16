@@ -1,0 +1,13 @@
+/* Find the total sales for each combination of product
+and order status */
+
+SELECT 
+  order_id,
+  order_date,
+  order_status,
+  prouct_id,
+  slaes,
+SUM(sales) OVER() toatal_sales,
+SUM(sales) OVER(PARTITION BY prdoct_id) sales_by_prducts,
+SUM(sales) OVER(PARTITION BY prdoct_id, order_status) sales_by_prducts_and_status
+FROM sales.orders
