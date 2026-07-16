@@ -1,0 +1,9 @@
+
+SELECT
+  order_id,
+  order_date,
+  sales,
+  RANK () OVER ( PARTITION BY order-status ORDER BY order_date 
+  ROWS BETWWEN CURRENT ROW AND 2 FOLLOWIN) total_sales --BETWEEN 2 PRECEDING AND CURRENT ROW -> 2 PRECIDIN 
+FROM sales.orders
+
