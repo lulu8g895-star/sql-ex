@@ -1,0 +1,9 @@
+
+SELECT
+  order_id,
+  order_date,
+  product_id,
+  sales,
+SUM (sale) OVER() toatl_sales,
+SUM (sale) OVER(PARTITION BY product_id) toatl_sales_by_products
+FROM sales.orders
