@@ -1,0 +1,9 @@
+-- Find the total sales for each product
+-- Additionally provide details such order Id, order date
+
+SELECT
+  order_id,
+  order_date,
+  product_id,
+SUM (sale) OVER(PARTITION BY product_id) toatl_sales
+FROM sales.orders
