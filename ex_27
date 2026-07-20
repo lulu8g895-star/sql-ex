@@ -1,0 +1,27 @@
+-- Find all orders where sales are higher then the avareage sales across all orders
+
+SELECT
+OrderId,
+ProductId,
+Sales,
+FROM Sales.Orders -- we ahev sales for each orders
+
+SELECT
+OrderId,
+ProductId,
+Sales,
+AVG (sales) OVER () AvgSales -- we gets avg score
+FROM Sales.Orders
+
+
+SELECT 
+* 
+FROM (
+  SELECT
+    OrderId,
+    ProductId,
+    Sales,
+    AVG (sales) OVER () AvgSales 
+  FROM Sales.Orders
+) t WHERE Sales > AvgSales  -- for aggrigation
+-- window function can't be used with WHERE so we created subquery
