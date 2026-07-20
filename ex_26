@@ -1,0 +1,10 @@
+-- Find the averagescore of customers
+-- Additionally provide details such Customer ID and LastName
+SELECT
+CustomerID,
+LastName,
+Score,
+COALESCE (Score ,0) CustomerScore,
+AVG (Score) OVER AVGSCORE,
+AVG (COALESCE (Score, 0) ) OVER () AVGScoreWithNotNULL
+FROM Sales.Customers
